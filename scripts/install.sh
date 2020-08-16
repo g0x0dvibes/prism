@@ -73,6 +73,20 @@ git clone https://github.com/maurosoria/dirsearch.git /opt/dirsearch
 ln -s /opt/dirsearch/dirsearch.py /usr/local/bin/dirsearch
 git clone https://github.com/flozz/p0wny-shell.git /opt/shells
 
+# project discovery stuff
+git clone https://github.com/projectdiscovery/nuclei.git /opt/nuclei
+cd /opt/nuclei/v2/cmd/nuclei/
+go build .
+mv nuclei /usr/local/bin/
+nuclei -update-templates
+cd /home/ubuntu
+
+git clone https://github.com/projectdiscovery/subfinder.git /opt/subfinder
+cd /opt/subfinder/cmd/subfinder
+go build .
+mv subfinder /usr/local/bin/
+cd /home/ubuntu
+
 #spiderfoot
 wget https://github.com/smicallef/spiderfoot/archive/v3.1.tar.gz
 tar zxvf v3.1.tar.gz
@@ -112,3 +126,5 @@ rm packages-microsoft-prod.deb
 rm install.sh
 rm v3.1.tar.gz
 rm -rf go/src/*
+rm -rf /opt/nuclei
+rm -rf /opt/subfinder

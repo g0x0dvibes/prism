@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "prism_c2" {
-  ami                    = "ami-0d8c320297be9e521"
+  ami                    = var.ami_id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.main_mgmt_sg.id,]
   key_name = var.key_name

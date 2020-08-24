@@ -1,6 +1,6 @@
 variable "mgmt_home_ip" {
     type = string
-    default = "/32"
+    default = "0.0.0.0/0"
 }
 
 variable "key_name" {
@@ -10,12 +10,12 @@ variable "key_name" {
 
 variable "ami_id" {
     type = string
-    default = ""
+    default = "ami-123456"
 }
 
 variable "instance_size" {
     type = string
-    default = "t2.micro'
+    default = "t2.micro"
 }
 
 variable "root_volume_size" {
